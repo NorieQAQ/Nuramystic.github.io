@@ -1,0 +1,50 @@
+/* 定义樱花飘落的容器样式，让它占满整个页面可视区域 */
+.sakura-container {
+    width: 100%;
+    height: 100vh; /* vh单位表示视口高度，100vh就是整个屏幕高度 */
+    position: relative; /* 相对定位，方便后续里面的樱花元素定位 */
+    overflow: hidden; /* 隐藏超出容器范围的内容 */
+}
+
+/* 定义单个樱花的样式，这里把樱花用一个圆形元素模拟，你也可以替换成樱花的图片 */
+.sakura {
+    width: 15px; /* 樱花的大小，可以根据喜好调整 */
+    height: 15px;
+    border-radius: 50%; /* 让元素变成圆形，模拟樱花的形状 */
+    background-color: pink; /* 樱花的颜色，可换成更接近真实樱花的淡粉色等 */
+    position: absolute; /* 绝对定位，便于通过动画控制其在容器内的位置变化 */
+    opacity: 0.8; /* 透明度，让樱花看起来更自然 */
+    animation: sakura-fall linear infinite; /* 应用樱花飘落的动画，设置为线性、无限循环 */
+}
+
+/* 定义樱花飘落的动画关键帧 */
+@keyframes sakura-fall {
+    0% {
+        /* 动画开始时，樱花在页面顶部上方一定距离处，这里设置为 -10vh，也就是视口高度的10%的位置 */
+        top: -10vh;
+        /* 随机设置樱花在水平方向的起始位置，left取值范围是0到100%，也就是整个页面宽度范围 */
+        left: 0;
+        transform: rotate(0deg); /* 初始旋转角度为0度 */
+    }
+    100% {
+        /* 动画结束时，樱花落到页面底部下方一定距离处，这里设置为 110vh */
+        top: 110vh;
+        left: 100%; /* 水平方向移动到页面最右边 */
+        transform: rotate(360deg); /* 旋转360度，模拟飘落过程中的旋转效果 */
+    }
+}
+
+/* 使用 JavaScript 动态创建多个樱花元素（下面这段代码可以放到 HTML 文件中，放在script标签内，也可以放在外部的js文件并引入到HTML中，这里只是示意，重点是CSS实现飘落效果） */
+function createSakuras() {
+    const sakuraContainer = document.querySelector('.sakura-container');
+    const numSakuras = 50; /* 定义创建的樱花数量，可以根据想要的效果调整 */
+    for (let i = 0; i < numSakuras; i++) {
+        const sakura = document.createElement('div');
+        sakura.classList.add('sakura');
+        // 给每个樱花设置不同的飘落时间，让效果更自然，这里随机设置在5到15秒之间
+        sakura.style.animationDuration = `${Math.random() * 10 + 5}s`;
+        sakuraContainer.appendChild(sakura);
+    }
+}
+
+window.onload = createSakuras; /* 页面加载完成后执行创建樱花的函数 */
