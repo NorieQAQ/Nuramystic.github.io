@@ -21,6 +21,9 @@ function calculateUptime() {
 setInterval(() => {
     const uptime = calculateUptime();
     console.log(`网站已运行 ${uptime.days} 天 ${uptime.hours} 小时 ${uptime.minutes} 分钟 ${uptime.seconds} 秒`);
-    // 如果后续要在网页上展示，这里可以通过相应的 DOM 操作将信息展示到页面元素上，比如：
-    // document.getElementById('uptime-display').innerHTML = `网站已运行 ${uptime.days} 天 ${uptime.hours} 小时 ${uptime.minutes} 分钟 ${uptime.seconds} 秒`;
+    // 这里添加代码用于更新页面上显示运行时间的元素内容，后续在 HTML 中会创建对应的元素
+    const uptimeDisplay = document.getElementById('uptime-display');
+    if (uptimeDisplay) {
+        uptimeDisplay.innerHTML = `网站已运行 ${uptime.days} 天 ${uptime.hours} 小时 ${uptime.minutes} 分钟 ${uptime.seconds} 秒`;
+    }
 }, 1000);
