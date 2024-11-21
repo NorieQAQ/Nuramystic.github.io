@@ -4,7 +4,7 @@
     height: 400px;
     background-color: lightblue;
     border: 1px solid skyblue;
-    background-image: url('day.jpg'); /* 再次声明白天背景图片路径，确保样式覆盖等情况也能正常显示 */
+    background-image: url('https://picture.gptkong.com/20241121/125728c82a795c41cfa66fbe6781a614cb.png'); /* 再次声明白天背景图片路径，确保样式覆盖等情况也能正常显示 */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -16,7 +16,7 @@
     background-color: darkslateblue;
     border: 1px solid indigo;
     color: white;
-    background-image: url('night.jpg'); /* 设置黑夜背景图片路径 */
+    background-image: url('https://picture.gptkong.com/20241120/21018f83343299491fa93f6aaf6c43ffb9.PNG'); /* 设置黑夜背景图片路径 */
     background-size: cover;
     background-repeat: no-repeat;
 }
