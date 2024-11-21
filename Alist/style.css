@@ -1,0 +1,33 @@
+/* 白天场景样式 */
+.day {
+    width: 400px;
+    height: 400px;
+    background-color: lightblue;
+    border: 1px solid skyblue;
+    background-image: url('day.jpg'); /* 再次声明白天背景图片路径，确保样式覆盖等情况也能正常显示 */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* 黑夜场景样式 */
+.night {
+    width: 400px;
+    height: 400px;
+    background-color: darkslateblue;
+    border: 1px solid indigo;
+    color: white;
+    background-image: url('night.jpg'); /* 设置黑夜背景图片路径 */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#dayNightButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 10px; /* 给按钮添加一点底部外边距，使其与下方展示区域隔开一点，更美观 */
+}
